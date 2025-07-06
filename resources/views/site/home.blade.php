@@ -429,7 +429,7 @@
                                         @foreach($posts as $post)
                                             <div class="swiper-slide">
                                                 <div class="event-carousel-item">
-                                                    <h4><a href="blog-single.html">{{ $post->name }}</a></h4>
+                                                    <h4><a href="{{ route('front.blogDetail', $post->slug) }}">{{ $post->name }}</a></h4>
                                                     <span class="event-date">{{ \Illuminate\Support\Carbon::parse($post->created_at)->format('d/m/Y') }}</span>
                                                     <p> {{ $post->intro }} </p>
                                                 </div>
