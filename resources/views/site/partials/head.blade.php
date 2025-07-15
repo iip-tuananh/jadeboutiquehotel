@@ -4,8 +4,33 @@
 <!--=============== css  ===============-->
 <link type="text/css" rel="stylesheet" href="/site/css/plugins.css">
 <link type="text/css" rel="stylesheet" href="/site/css/style.css">
+
+
+
 <!--=============== favicons ===============-->
-<link rel="shortcut icon" href="{{@$config->favicon->path ?? ''}}">
+<link rel="shortcut icon" href="{{@$config->favicon->path ?? ''}}" type="image/x-icon">
+<link rel="apple-touch-icon" sizes="180x180" href="{{@$config->favicon->path ?? ''}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{@$config->favicon->path ?? ''}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{@$config->favicon->path ?? ''}}">
+<meta name="application-name" content="{{ $config->web_title }}" />
+<meta name="generator" content="@yield('title')" />
+
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:title" content="@yield('title')">
+<meta property="og:description" content="@yield('description')">
+<meta property="og:image" content="@yield('image')">
+<meta property="og:site_name" content="{{ url()->current() }}">
+<meta property="og:image:alt" content="{{ $config->web_title }}">
+<meta itemprop="description" content="@yield('description')">
+<meta itemprop="image" content="@yield('image')">
+<meta itemprop="url" content="{{ url()->current() }}">
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="vi_VN" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="{{ url()->current() }}" />
+
+
+
 
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
