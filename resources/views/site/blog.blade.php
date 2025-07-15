@@ -1,12 +1,7 @@
 @extends('site.layouts.master')
-@section('title')
-    {{ $categoryBlog->name ?? 'Tin tức và hoạt động' }}
-@endsection
-@section('description')
-    {{ strip_tags(html_entity_decode($config->introduction)) }}
-@endsection
-@section('image')
-    {{ @$categoryBlog->image->path ?? '' }}
+@section('title'){{ $categoryBlog->name ?? 'Tin tức và hoạt động' }}@endsection
+@section('description'){{ strip_tags(html_entity_decode($config->introduction)) }}@endsection
+@section('image'){{ @$categoryBlog->image->path ?? '' }}
 @endsection
 
 @section('css')

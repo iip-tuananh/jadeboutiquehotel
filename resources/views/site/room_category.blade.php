@@ -1,8 +1,6 @@
 @extends('site.layouts.master')
 
-@section('title')
-    Phòng và Phòng Suite - {{ $config->web_title }}
-@endsection
+@section('title')Phòng và Phòng Suite - {{ $config->web_title }}@endsection
 @section('description')
 @endsection
 @section('image')
