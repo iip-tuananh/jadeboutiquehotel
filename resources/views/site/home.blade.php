@@ -139,11 +139,80 @@
         </div>
         <!-- section end  -->
         <!-- section   -->
+        <style>
+            .rooms-carousel-item_container {
+                padding: 12px;
+                background: rgba(0, 0, 0, 0.4); /* lớp nền tối mờ để chữ dễ đọc hơn */
+                color: #fff;
+                border-radius: 10px;
+                /*position: relative;*/
+                z-index: 2;
+            }
+
+            /* Giới hạn mô tả 2 dòng */
+            .rooms-carousel-item_container p {
+                margin-top: 4px;
+                font-size: 0.9rem;
+                line-height: 1.4;
+                max-height: 2.8em;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+            }
+
+
+            /* Chi tiết icon (diện tích, người lớn) */
+            .room-card-details ul {
+                display: flex;
+                gap: 10px;
+                padding: 0;
+                /*margin: 8px 0;*/
+                list-style: none;
+            }
+
+            .room-card-details ul li {
+                display: flex;
+                align-items: center;
+                font-size: 0.85rem;
+                color: #fff;
+            }
+
+            .room-card-details ul li i {
+                margin-right: 4px;
+            }
+
+            /* Mobile tối ưu */
+            @media (max-width: 767px) {
+                .rooms-carousel-item_container h3 {
+                    font-size: 1rem;
+                }
+
+                .rooms-carousel-item_container p {
+                    font-size: 0.85rem;
+                    -webkit-line-clamp: 2;
+                }
+
+                .grid-item_price span {
+                    font-size: 1rem;
+                }
+
+                .like-btn {
+                    display: none; /* Ẩn chữ "Yêu thích" nếu chật */
+                }
+
+                .section-title-room {
+                    font-size: 10px;
+                }
+            }
+
+        </style>
         @foreach($categoriesSpecial as $categorySpecial)
             <div class="content-section dark-bg no-padding hidden-content">
                 <div class="row">
                     <div class="st-gallery">
-                        <div class="section-title">
+                        <div class="section-title section-title-room">
                             <h4>Special selection</h4>
                             <h2>{{ $categorySpecial->name }}</h2>
                             <div class="section-separator sect_se_transparent"><span><i class="fa-thin fa-gem"></i></span></div>
@@ -167,7 +236,7 @@
                                                     <div class="rooms-carousel-item_container">
                                                         <h3><a href="{{ route('front.getRoom', $roomSpecial->slug) }}">{{ $roomSpecial->name }}</a>
                                                         </h3>
-                                                        <p> {{ $roomSpecial->intro }}</p>
+                                                        <p title=" {{ $roomSpecial->intro }}"> {{ $roomSpecial->intro }}</p>
                                                         <div class="room-card-details">
                                                             <ul>
                                                                 <li><i class="fa-light fa-crop"></i><span>{{ $roomSpecial->area }}</span></li>
@@ -182,7 +251,6 @@
                                                     <div class="like-btn" ng-click="addToMyHeart({{ $roomSpecial->id }})"><i class="fa-light fa-heart"></i> <span>Yêu thích</span></div>
                                                 </div>
                                             </div>
-
                                         @endforeach
                                     </div>
                                 </div>

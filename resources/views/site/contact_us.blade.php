@@ -130,7 +130,7 @@
                                                         <div class="invalid-feedback d-block" ng-if="errors['name']"><% errors['name'][0] %></div>
                                                     </div>
                                                     <div class="col-sm-6">
-                                                        <input type="text"  name="phone" id="email" placeholder="Số điện thoại*" value="">
+                                                        <input type="text"  name="phone" id="phone" placeholder="Số điện thoại *" value="">
                                                         <div class="invalid-feedback d-block" ng-if="errors['phone']"><% errors['phone'][0] %></div>
                                                     </div>
                                                 </div>
