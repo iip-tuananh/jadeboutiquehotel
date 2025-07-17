@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Model\Admin\Service;
 use App\Model\Admin\Service as ThisModel;
+use App\Model\Admin\ServiceGallery;
 use Illuminate\Http\Request;
 use \Carbon\Carbon;
 use Illuminate\Validation\Rule;
@@ -210,6 +212,17 @@ class ServiceController extends Controller
 				"alert-type" => "warning"
 			);
 		} else {
+            if($object->image) {
+                FileHelper::deleteFileFromCloudflare($object->image, $object->id, Service::class, 'image');
+            }
+
+            if($object->galleries) {
+                foreach ($object->galleries as $gallery) {
+                    FileHelper::deleteFileFromCloudflare($gallery->image, $gallery->id, ServiceGallery::class);
+                    $gallery->removeFromDB();
+                }
+            }
+
 			$object->delete();
 			$message = array(
 				"message" => "Thao tác thành công!",
