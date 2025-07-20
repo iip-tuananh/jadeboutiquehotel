@@ -10,12 +10,12 @@
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/debugging.html
 
 // Production
-// error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
-// ini_set('display_errors', 0);
+error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+ini_set('display_errors', 0);
 
 // Development
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 
 /*============================ General Settings =======================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html
@@ -31,9 +31,10 @@ $config['authentication'] = function () {
 
 /*============================ License Key ============================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_licenseKey
+/*https://www.phamgiang.pro/apps/ckfinderKey*/
 
-$config['licenseName'] = 'tanphat';
-$config['licenseKey']  = '*H?K-*1**-T**C-*U**-*6**-1*X*-A**P';
+$config['licenseName'] = 'sanvuonviet.vn';
+$config['licenseKey']  = 'B2Y25J8XUF9G3VBU6YG4TL8XUB3BR';
 
 /*============================ CKFinder Internal Directory ============================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_privateDir
@@ -95,7 +96,22 @@ $config['resourceTypes'][] = array(
     'deniedExtensions'  => '',
     'backend'           => 'default'
 );
-
+$config['resourceTypes'][] = array(
+    'name'              => 'Ảnh người dùng',
+    'directory'         => 'Userimg',
+    'maxSize'           => 0,
+    'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
+    'deniedExtensions'  => '',
+    'backend'           => 'default'
+);
+$config['resourceTypes'][] = array(
+    'name'              => 'Banner',
+    'directory'         => 'Bannerimg',
+    'maxSize'           => 0,
+    'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
+    'deniedExtensions'  => '',
+    'backend'           => 'default'
+);
 /*================================ Access Control =====================================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_roleSessionVar
 
