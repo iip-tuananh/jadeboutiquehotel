@@ -29,6 +29,7 @@
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="{{ url()->current() }}" />
 
+<link rel="stylesheet" href="/site/css/callbutton.css?v=12">
 
 
 

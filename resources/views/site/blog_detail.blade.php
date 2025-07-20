@@ -72,17 +72,20 @@
                                         </div>
                                     </div>
                                     <!-- blog media end -->
-                                    <div class="text-block post-single_tb">
+                                    <div class="text-block post-single_tb" >
                                         <div class="text-block-container">
                                             <div class="tbc_subtitle">{{$blog->name}}</div>
                                             <div class="room-card-details" style="margin-bottom: 20px">
                                                 <ul>
                                                     <li><i class="fa-light fa-calendar-days"></i><span>{{ \Illuminate\Support\Carbon::parse($blog->created_at)->format('d/m/Y') }}</span></li>
-                                                    <li><i class="fa-light fa-comment"></i><span>2 comments</span></li>
+                                                    <li><i class="fa-light fa-user"></i><span>Admin</span></li>
                                                 </ul>
                                             </div>
 
-                                            {!! $blog->body !!}
+                                            <div style="font-size: 16px !important; line-height: 1.6 !important;">
+                                                {!! $blog->body !!}
+                                            </div>
+
                                         </div>
                                         <div class="tbc-separator"></div>
 
