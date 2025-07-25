@@ -5,7 +5,6 @@
     font-style: unset !important;
     font-weight: unset !important;
     color: unset !important;
-    line-height: unset !important;
     text-decoration: unset !important;
     margin: unset !important;
     padding: unset !important;
@@ -16,6 +15,7 @@
 
 .editor-content {
     text-align: left; /* Reset mặc định */
+    line-height: 1.6
 }
 
 .editor-content * {
