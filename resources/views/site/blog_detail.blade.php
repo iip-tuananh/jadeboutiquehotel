@@ -5,6 +5,9 @@
 @section('image'){{ @$blog->image->path ?? '' }}@endsection
 
 @section('css')
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Georgia&family=Courier+Prime&display=swap" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="/site/css/editor-content.css">
 
 @endsection
 
@@ -82,9 +85,14 @@
                                                 </ul>
                                             </div>
 
-                                            <div style="font-size: 16px !important; line-height: 1.6 !important;">
+
+{{--                                            <div style="font-size: 16px !important; line-height: 1.6 !important;">--}}
+{{--                                                {!! $blog->body !!}--}}
+{{--                                            </div>--}}
+                                            <div class="editor-content" >
                                                 {!! $blog->body !!}
                                             </div>
+
 
                                         </div>
                                         <div class="tbc-separator"></div>
