@@ -33,9 +33,10 @@ $config['authentication'] = function () {
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_licenseKey
 /*https://www.phamgiang.pro/apps/ckfinderKey*/
 
-$config['licenseName'] = 'sanvuonviet.vn';
-$config['licenseKey']  = 'B2Y25J8XUF9G3VBU6YG4TL8XUB3BR';
 
+
+$config['licenseName'] = 'tanphat';
+$config['licenseKey']  = '*H?K-*1**-T**C-*U**-*6**-1*X*-A**P';
 /*============================ CKFinder Internal Directory ============================*/
 // https://ckeditor.com/docs/ckfinder/ckfinder3-php/configuration.html#configuration_options_privateDir
 
